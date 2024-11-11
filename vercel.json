@@ -1,17 +1,18 @@
 {
+    "version": 2,
     "builds": [
-        {
-            "src": "src",
-            "use": "@vercel/node",
-            "config": {
-                "runtime": "nodejs"
-            }
+      {
+        "src": "src",
+        "use": "@vercel/node",
+        "config": {
+          "runtime": "nodejs"
         }
+      }
     ],
     "routes": [
-        {
-            "src": "dist/src/**/*.js",
-            "dest": "/api"
-        }
+      {
+        "src": "/api/(.*)",
+        "dest": "/api/$1"
+      }
     ]
-}
+  }
